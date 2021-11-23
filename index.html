@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<title>SRSP</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+    <!-- PWA 적용 -->
+    <link rel="manifest" href="manifest.json" />
+
+	<!-- CSS 적용-->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+
+	<!-- favicon 적용-->
+
+    
+	<!-- 아이폰 웹앱 적용 (주소줄 없애기, 상태바 검은색 적용)-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<!-- 주소줄 없애기(안드로이드)-->
+	<meta name="mobile-web-app-capable" content="yes" />
+</head>
+<body>
+	<div class="content">
+		<div class="content-title">
+			Sound Voltex<br/>Random Song Picker
+		</div>
+		<div class="content-button">
+			<div class="level-select">
+				<table>
+					<tr>
+						<td>
+							<input type="checkbox" name="box[]" id="01" value="01" class="checkSelect">
+							<label for="01" class = "level">1렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="02" value="02" class="checkSelect">
+							<label for="02" class = "level">2렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="03" value="03" class="checkSelect">
+							<label for="03" class = "level">3렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="04" value="04" class="checkSelect">
+							<label for="04" class = "level">4렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="05" value="05" class="checkSelect">
+							<label for="05" class = "level">5렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="06" value="06" class="checkSelect">
+							<label for="06" class = "level">6렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="07" value="07" class="checkSelect">
+							<label for="07" class = "level">7렙</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" name="box[]" id="08" value="08" class="checkSelect">
+							<label for="08" class = "level">8렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="09" value="09" class="checkSelect">
+							<label for="09" class = "level">9렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="10" value="10" class="checkSelect">
+							<label for="10" class = "level">10렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="11" value="11" class="checkSelect">
+							<label for="11" class = "level">11렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="12" value="12" class="checkSelect">
+							<label for="12" class = "level">12렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="13" value="13" class="checkSelect">
+							<label for="13" class = "level">13렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="14" value="14" class="checkSelect">
+							<label for="14" class = "level">14렙</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" name="box[]" id="15" value="15" class="checkSelect">
+							<label for="15" class = "level">15렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="16" value="16" class="checkSelect">
+							<label for="16" class = "level">16렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="17" value="17" class="checkSelect">
+							<label for="17" class = "level">17렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="18" value="18" class="checkSelect">
+							<label for="18" class = "level">18렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="19" value="19" class="checkSelect">
+							<label for="19" class = "level">19렙</label>
+						</td>
+						<td>
+							<input type="checkbox" name="box[]" id="20" value="20" class="checkSelect">
+							<label for="20" class = "level">20렙</label>
+						</td>
+					</tr>
+					<!-- <tr>
+					</tr> -->
+				</table>
+			</div>
+			
+			<!-- 상2 하1 구조-->
+			<div class="result">
+				<div class="result-image">
+					<img name = "illust"src="./assets/img/test_image.jpeg" alt="image_section">
+				</div>
+				<div class="result-level">
+					<p id = "level">선택된 레벨</p>
+				</div>
+				<div class="result-release-date">
+					<p id="release-date">선택된 곡 수록일</p>
+				</div>
+				<div class="result-title">
+					<p id = "title">선택된 곡명</p>
+				</div>
+			</div>
+			<div class="click">
+				<button type="title" onclick='RecommendSong();'>Pick Song!</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+
+<!-- https://raw.githubusercontent.com/Kolesati/SRSP-images/main/song_data_app.json -->

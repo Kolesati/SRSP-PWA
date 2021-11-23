@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'slant';
+    src: url('../assets/fonts/slant.ttf') format('truetype');
+}
+
+body {
+	top: 0;
+	left: 0;
+	width : 100%;
+	height : 100%;
+	background-color : #FA7268;
+	color : #FFF;
+	margin : 0;
+}
+
+/* content div */
+.content-title {
+	font-size : 30px;
+	font-weight : 700;
+	text-align : center;
+	margin-bottom : 20px;
+}
+.content-title {
+	font-family: 'slant';
+	letter-spacing: 2px;
+}
+
+.content {
+	display : flex;
+	flex-direction : column;
+	justify-content : center;
+	max-width : 350px;
+	min-height : 100vh;
+	margin : 0 auto;
+}
+
+.content-button {
+	width : 100%;
+}
+
+/* level select div */
+.level-select table {
+	width : 100%;
+}
+
+.level-select table tr {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.level-select table tr td {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.level-select table tr label{
+	text-align:center;
+	font-size: 1.1rem;
+}
+
+/* result div */
+.result {
+	margin-bottom : 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.result div {
+	margin: 0 auto;
+}
+
+/* button div */
+.click {
+	width: 100%;
+}
+
+.click button {
+	width: 100%;
+	border-width: 0;
+	border-radius: 5px;
+	padding: 10px 5px;
+	background-color: #F8A29D;
+
+	font-family: 'slant';
+	font-size: 20px;
+	color: #FFF;
+}
