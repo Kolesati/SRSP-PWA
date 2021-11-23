@@ -4,6 +4,9 @@ import App from './App.vue'
 // Service Worker
 import './registerServiceWorker'
 
+// plugins
+import '@/plugins/firebase'
+
 Vue.config.productionTip = false
 
 new Vue({
