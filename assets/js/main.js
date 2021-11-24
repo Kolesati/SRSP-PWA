@@ -1,5 +1,8 @@
-import data from "../json/song_data_app.json" assert { type: "json" };
-
+let data = await fetch('assets/json/song_data_app.json')
+    .then(response => response.json())
+    // .then(data => console.log(data))
+    .catch(err => console.log(err));
+console.log(data);
 
 const config = data["configs"][0];
 const songs = data["songs"];
@@ -7,8 +10,8 @@ console.log(config);
 console.log(songs);
 
 let chkbox = document.getElementsByClassName("checkSelect");
-console.log(chkbox);
-// $(".checkSelect");
+// console.log(chkbox);
+
 let cnt = 0;
 let selectedLevel = Array();
 let selectedArr = Array();
