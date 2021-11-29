@@ -1,30 +1,24 @@
-// const getDogImages = axios.get('assets/json/song_data_app.json').then((response) => { return response.data })
-// console.log(getDogImages)
-
-let jsonData;
-function getJson (){
-    fetch('assets/json/song_data_app.json')
-    .then(function(res) {
-        return res.json()
-    })
-    .then(function(data) {
-        jsonData = data;
-        console.log(jsonData)
-        return data;
-    })
-    .catch(err => console.log(err));
-    // .then(response => response.json())
-    // .then(data => console.log(data))
+function readJson(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
 }
-jsonData = getJson();
-console.log(jsonData);
 
-// console.log(data["configs"][0])
-// console.log(data["songs"])
-const config = data["configs"][0];
-const songs = data["songs"];
-console.log(config);
-console.log(songs);
+//usage:
+readJson("assets/json/song_data_app.json", function(text){
+    const data = JSON.parse(text);
+    const config = data["configs"][0];
+    const songs = data["songs"];
+    console.log(data);
+    console.log(config);
+    console.log(songs); 
+});
 
 let chkbox = document.getElementsByClassName("checkSelect");
 // console.log(chkbox);
