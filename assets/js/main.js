@@ -27,7 +27,6 @@ let cnt = 0;
 let selectedLevel = Array();
 let selectedArr = Array();
 let selectedIndex = 0;
-
 let selectedElement = "";
 let selectedSong = "";
 let selectedIllust = "";
@@ -43,11 +42,15 @@ function RecommendSong() {
 	selectedIllust = "";
 	for(var i=0;i<chkbox.length; i++) {
 		if(chkbox[i].checked == true) {
-			console.log(chkbox[i].value);
+			// console.log(chkbox[i].value);
 			selectedLevel[cnt] = chkbox[i].value;
 			cnt++;
 		}
 	}
+    
+    if(cnt == 0) {
+        return window.alert("레벨을 선택해주세요!");
+    }
     selectedIndex = selectedLevel[Math.floor(Math.random()*cnt)];
     console.log("선택된 level :" + selectedIndex);
 
