@@ -39,6 +39,10 @@ body {
 }
 
 /* level select div */
+.level-select {
+	margin-bottom : 10px;
+}
+
 .level-select table {
 	width : 100%;
 }
@@ -66,12 +70,30 @@ body {
 	margin-bottom : 10px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .result div {
 	margin: 0 auto;
+	width: 100%;
 }
 
+.result div p {
+	text-align: center
+}
+
+.result-image img {
+	display: block;
+	margin: 0 auto;
+}
+.result-level {
+	display: flex;
+	
+}
+
+.result-level p {
+	width: 50%;
+}
 /* button div */
 .click {
 	width: 100%;
