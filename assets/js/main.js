@@ -11,14 +11,11 @@ function readJson(file, callback) {
 }
 
 //usage:
+let songs;
 readJson("https://raw.githubusercontent.com/Kolesati/SRSP-images/main/level_song_data.json", function(text){
-    localStorage.songs = text;
-    // let songs = JSON.parse(text);
-    // console.log(songs);
+    songs = JSON.parse(text);
+    console.log(songs);
 });
-
-let songs = JSON.parse(localStorage.getItem('songs'));
-// console.log(songs)
 
 let chkbox = document.getElementsByClassName("checkSelect");
 let cnt = 0;
@@ -35,18 +32,17 @@ function RecommendSong() {
 	selectedLevel = Array();
 	selectedArr = Array();
 	level = 0;
-
+ 
 	selectedElement = "";
 	selectedSong = "";
 	selectedIllust = "";
 	for(var i=0;i<chkbox.length; i++) {
 		if(chkbox[i].checked == true) {
-			// console.log(chkbox[i].value);
 			selectedLevel[cnt] = chkbox[i].value;
 			cnt++;
 		}
 	}
-    
+        
     if(cnt == 0) {
         return window.alert("레벨을 선택해주세요!");
     }
@@ -54,13 +50,13 @@ function RecommendSong() {
     level = selectedLevel[Math.floor(Math.random()*cnt)];
     console.log("선택된 level :" + level);
 
-    // TODO : 선택된 레벨들을 이용해 array에 후보 곡 목록 넣고 뽑아서 적용시키기
     selectedSongs = songs[level];
     selectedSong = selectedSongs[Math.floor(Math.random()*selectedSongs.length)]
     console.log(selectedSong)
     
     // 자켓, level, 수록일, 곡명 선택
     var jacketLink = imgBaseUrl + selectedSong['jacket_link'];
+
     // level은 이미 정의됨
     var difficulty = selectedSong['difficulty'];
     var title = selectedSong['title'];
@@ -74,6 +70,7 @@ function RecommendSong() {
     console.log(composer)
     console.log(releasedDate)
 
+    // html에 적용
     document.getElementById('illust').src = jacketLink;
     document.getElementById('level').innerText = level;
     document.getElementById('difficulty').innerText = difficulty;
