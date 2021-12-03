@@ -56,6 +56,9 @@ function RecommendSong() {
     
     // 자켓, level, 수록일, 곡명 선택
     var jacketLink = imgBaseUrl + selectedSong['jacket_link'];
+    // 로딩시간 단축을 위해 .jpeg -> .webp 로 변경
+    jacketLink = jacketLink.replace('illust', 'illust_webp');
+    jacketLink = jacketLink.replace('.jpeg', '.webp');
 
     // level은 이미 정의됨
     var difficulty = selectedSong['difficulty'];
